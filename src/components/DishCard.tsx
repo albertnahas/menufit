@@ -25,7 +25,7 @@ export default function DishCard({ dish }: DishCardProps) {
     }
   }
 
-  const getAllergenChipColor = (allergen: string) => {
+  const getAllergenChipColor = () => {
     return 'bg-red-100 text-red-800'
   }
 
@@ -98,7 +98,7 @@ export default function DishCard({ dish }: DishCardProps) {
               <span
                 key={index}
                 className={`px-2 py-1 text-xs font-medium rounded-full ${
-                  getAllergenChipColor(allergen)
+                  getAllergenChipColor()
                 } ${
                   isUserAllergen(allergen) ? 'ring-2 ring-offset-1 ring-red-500' : ''
                 }`}

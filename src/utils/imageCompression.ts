@@ -1,4 +1,4 @@
-export const compressImage = (file: File, maxSizeKB: number = 1000): Promise<File> => {
+export const compressImage = (file: File): Promise<File> => {
   return new Promise((resolve, reject) => {
     const canvas = document.createElement('canvas')
     const ctx = canvas.getContext('2d')

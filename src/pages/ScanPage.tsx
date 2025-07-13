@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { uploadImage } from '../services/storage'
-import { mockAnalyzeMenu } from '../services/api'
+import { analyzeMenu } from '../services/api'
 import { useAuth } from '../contexts/AuthContext'
 
 export default function ScanPage() {
@@ -53,7 +53,7 @@ export default function ScanPage() {
         ),
       }
 
-      const result = await mockAnalyzeMenu({
+      const result = await analyzeMenu({
         imageUrl,
         userPrefs: filteredPrefs
       })

@@ -1,6 +1,5 @@
 import { createContext, useContext, ReactNode, useEffect, useState } from 'react'
 import { 
-  User as FirebaseUser,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut as firebaseSignOut,
@@ -9,7 +8,7 @@ import {
   signInWithPopup
 } from 'firebase/auth'
 import { auth } from '../services/firebase'
-import { User, UserPreferences } from '../types'
+import { User } from '../types'
 import { getUserPreferences } from '../services/firestore'
 
 interface AuthContextType {

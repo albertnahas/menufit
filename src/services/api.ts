@@ -44,7 +44,7 @@ export const analyzeMenu = async (request: AnalyzeMenuRequest): Promise<AnalyzeM
     // Fallback to mock if function fails in development
     if (import.meta.env.DEV) {
       console.warn('Function failed, falling back to mock data')
-      return mockAnalyzeMenu(request)
+      return mockAnalyzeMenu()
     }
     
     throw new Error(error.message || 'Failed to analyze menu. Please try again.')
@@ -69,7 +69,7 @@ export const checkAIHealth = async () => {
   }
 }
 
-export const mockAnalyzeMenu = async (request: AnalyzeMenuRequest): Promise<AnalyzeMenuResponse> => {
+export const mockAnalyzeMenu = async (): Promise<AnalyzeMenuResponse> => {
   await new Promise(resolve => setTimeout(resolve, 2000))
   
   return {

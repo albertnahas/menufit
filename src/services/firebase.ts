@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
-import { getFunctions, connectFunctionsEmulator } from 'firebase/functions'
+import { getFunctions } from 'firebase/functions'
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY || 'demo-api-key',
@@ -21,14 +21,14 @@ export const storage = getStorage(app)
 export const functions = getFunctions(app)
 
 // Connect to emulator in development
-if (import.meta.env.DEV) {
-  try {
-    connectFunctionsEmulator(functions, '127.0.0.1', 5002)
-    console.log('🔧 Connected to Functions Emulator at http://127.0.0.1:5002')
-    console.log('🚀 All function calls will use the local emulator')
-  } catch (error) {
-    console.log('ℹ️ Functions emulator connection skipped (already connected or unavailable)')
-  }
-}
+// if (import.meta.env.DEV) {
+//   try {
+//     connectFunctionsEmulator(functions, '127.0.0.1', 5002)
+//     console.log('🔧 Connected to Functions Emulator at http://127.0.0.1:5002')
+//     console.log('🚀 All function calls will use the local emulator')
+//   } catch (error) {
+//     console.log('ℹ️ Functions emulator connection skipped (already connected or unavailable)')
+//   }
+// }
 
 export default app
