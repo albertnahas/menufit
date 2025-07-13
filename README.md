@@ -2,6 +2,8 @@
 
 A React-based web application that analyzes menu photos to provide instant nutrition information, dietary flags, and allergen warnings.
 
+https://menufit.vercel.app
+
 ## Features
 
 - 📸 Photo capture and upload
